@@ -1,0 +1,68 @@
+.body{
+    width:100%;
+    margin:0px 0px;
+    font-size:1em;
+}
+
+#content{
+    width: 1000px;
+    margin: 0px auto;
+}
+
+/* resize to mobile device */
+@media screen and (max-device-width: 960px) {
+    #content{
+        width: 100%;
+    }
+}
+
+#nav {
+    float:left;
+    padding: 20px 5%;
+    width: 90%;
+    background-color: #666666;
+    color: #FFFFFF;
+    font-size: 26px;
+}
+
+#list {
+     width: 70%;
+     font-size: 20px;
+     float:right;
+ }
+
+#list a{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+#list a:hover{
+    color: yellow;
+    text-decoration: none;
+}
+
+#wrapper{
+    margin-top:5px;
+    font-size:12px;
+}
+
+
+/*tip css*/
+.demo-info{
+    width:90%;
+    float:left;
+    background:#FFFEE6;
+    color:#8F5700;
+    padding:12px;
+    margin-top:5px;
+    clear:both;
+}
+.demo-tip{
+    width:24px;
+    height:16px;
+    float:left;
+}
+
+.icon-tip {
+    background: url('icons/tip.png') no-repeat;
+}

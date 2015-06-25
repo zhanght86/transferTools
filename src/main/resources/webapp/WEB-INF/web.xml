@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+    <display-name></display-name>
+    <!-- 邀请码 -->
+    <servlet>
+        <servlet-name>InviteServlet</servlet-name>
+        <servlet-class>client.servlet.InviteServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>InviteServlet</servlet-name>
+        <url-pattern>/client/servlet/InviteServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- 自身信息及注册 -->
+    <servlet>
+        <servlet-name>SelfServlet</servlet-name>
+        <servlet-class>client.servlet.SelfServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SelfServlet</servlet-name>
+        <url-pattern>/client/servlet/SelfServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 当前的增量包列表 -->
+    <servlet>
+        <servlet-name>SvnPackServlet</servlet-name>
+        <servlet-class>client.servlet.SvnPackServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SvnPackServlet</servlet-name>
+        <url-pattern>/client/servlet/SvnPackServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 返回下载内容-->
+    <servlet>
+        <servlet-name>DownloadServlet</servlet-name>
+        <servlet-class>client.servlet.DownloadServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DownloadServlet</servlet-name>
+        <url-pattern>/client/servlet/DownloadServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- 作为部署节点时，接收父节点的领导 -->
+    <servlet>
+        <servlet-name>CommandServlet</servlet-name>
+        <servlet-class>server.servlet.CommandServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CommandServlet</servlet-name>
+        <url-pattern>/server/servlet/CommandServlet</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>

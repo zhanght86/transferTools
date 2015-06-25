@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScheduleCenter>
+    <!--
+        TaskGroup : 一个任务组内可以定义多个任务，拥有相同的开始时间和间隔 （当前只能定义一个任务组）
+            | 属性
+            | - firstTime : 开始时间，可以是时间如 2015-01-14 00:00:00
+            |               或者 字符串 "now",默认 "now"
+            | - period ： 执行间隔（单位是毫秒），可以是数字如 1000(1秒一次)
+            |             或者 表达式 24 * 60 * 60 * 1000 （一天一次），默认 60 * 60 * 1000
+            | - endCondition : 结束条件 可以是 数字如 3 (3次) 或者 字符串 "never",默认"never"
+
+
+            Task : 一个任务（可以定义多个任务，多个任务按次序执行）
+                name : 任务名，日志会显示
+                class : 任务具体实现java类，必须继承 TaskBase
+                conf ： 任务的一些配置参数，可通过 getConf("propName") 获取
+                    prop : 具体配置,键值对
+    -->
+    <TaskGroup firstTime="now" period="600*1000" endCondition="never">
+
+        <Task>
+            <name>定时更新增量包实现</name>
+            <class>schedule.impl.UpdateFileTask</class>
+            <conf>
+                <prop name="sayHello">hello</prop>
+            </conf>
+        </Task>
+
+
+    </TaskGroup>
+</ScheduleCenter>
