@@ -26,6 +26,9 @@ public class CachePool {
 
     public static Node self;
 
+    // TODO 预加载父节点
+    public static Node parent;
+
     public static int fileReleaseMaxNo;        // 本地文件已发布的最大序号
     public static int fileUpdateMaxNo;        // 本地文件最大的序号（包括已发布和正在更新的）
 

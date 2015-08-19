@@ -53,7 +53,6 @@ public class BaseServlet extends HttpServlet {
         }
     }
 
-
     public void returnSuccess(HttpServletResponse resp, String msg){
         HashMap<String,String> result = new HashMap<String, String>();
         result.put("code", "1");

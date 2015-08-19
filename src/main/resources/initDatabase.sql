@@ -1,5 +1,5 @@
 -------system---db---init-----------
----- version : 0.7              ----
+---- version : 0.8              ----
 ---- auto-init : true           ----
 -----前3行除版本号的数字其他不可修改----
 
@@ -84,6 +84,7 @@ create table node_self(
     status  varchar(30)            -- 状态 0 作废 1 正用
 );
 
+
 -- 增量包列表
 DROP TABLE IF EXISTS node_packlist;
 create table node_packlist(
@@ -102,4 +103,35 @@ create table node_packlist(
     deploycount int,          -- 部署次数
     deploytime  varchar(30),   -- 上次部署时间
     status int         -- 状态 0 新增状态，未发布 1 正在更新  2 发布（更新完成）
+);
+
+
+-- 文件类别表
+DROP TABLE IF EXISTS typelist;
+create table typelist(
+    typeid varchar(100),    -- 类别ID
+    typename varchar(100)   -- 类别名称
+);
+
+-- 文件列表
+DROP TABLE IF EXISTS filelist;
+create table filelist(
+    id varchar(100),            -- 文件号
+    version varchar(100),       -- 版本号
+    filename varchar(100),      -- 文件名
+    size varchar(100),          -- 大小(M)
+    comment varchar(100),       -- 备注
+    createtime varchar(30),    -- 创建时间
+    assesstime varchar(30),    -- 预估更新时间
+    status int                 -- 状态 0 新增状态，未发布 1 正在更新  2 发布（更新完成）
+);
+
+-- 文件发布信息
+DROP TABLE IF EXISTS releaselist;
+create table releaselist(
+    fileid varchar(100),       -- 文件ID
+    typeid varchar(100),       -- 发布类别
+    downloadnum varchar(100),  -- 下载次数
+    index int,                 -- 序号
+    releasetime varchar(30)    -- 发布时间
 );

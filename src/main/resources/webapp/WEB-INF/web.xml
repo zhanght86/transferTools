@@ -58,6 +58,18 @@
         <url-pattern>/server/servlet/CommandServlet</url-pattern>
     </servlet-mapping>
 
+    <!-- 接收子节点的心跳 -->
+    <servlet>
+        <servlet-name>TickServlet</servlet-name>
+        <servlet-class>tick.TickServerService</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>TickServlet</servlet-name>
+        <url-pattern>/server/TickServlet</url-pattern>
+    </servlet-mapping>
+
+    TickServerService
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
